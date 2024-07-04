@@ -1,9 +1,9 @@
 import "./App.scss";
+import Header from "./components/Header/Header";
 const App = () => {
   return (
     <div className="App">
-      hello world
-      <button>Submit</button>
+      <Header />
     </div>
   );
 };
