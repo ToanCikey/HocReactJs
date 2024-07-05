@@ -9,14 +9,52 @@ body {
 }
 .App-container {
   .header-container {
-    .navbar-nav {
+    .btn-login {
+      border-radius: 5px;
+      border: 1px solid black;
+      margin-right: 15px;
+      padding: 0px 15px;
+    }
+    .navbar {
+      z-index: 10;
+      padding-top: 20px;
+      background-color: rgba(0, 0, 0, 0) !important;
       .nav-link {
         // &.active {
         // }
       }
       .active {
-        color: red;
+        color: #00bfff;
       }
+    }
+  }
+}
+.homepage-component {
+  video {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    source {
+    }
+  }
+}
+.homepage-content {
+  position: relative;
+  margin-left: 120px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .homepage-content_text1 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .homepage-content_text2 {
+    font-size: 25px;
+  }
+  .homepage-content_text3 {
+    button {
+      font-size: 18px;
     }
   }
 }
