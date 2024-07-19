@@ -12,6 +12,7 @@ import Register from "./components/Auth/Register.js";
 import ListQuiz from "./components/User/ListQuiz.js";
 import DetailQuiz from "./components/User/DetailQuiz.js";
 import ManageQuiz from "./components/Admin/Content/Quiz/ManageQuiz.js";
+import Questions from "./components/Admin/Content/Questions/Questions.js";
 const NotFound = () => {
   return (
     <div className="container mt-3 alert alert-danger">
@@ -32,6 +33,7 @@ const LayOut = (props) => {
           <Route index element={<Dashboard />} />
           <Route path="manage-user" element={<ManageUser />} />
           <Route path="manage-quizzes" element={<ManageQuiz />} />
+          <Route path="manage-questions" element={<Questions />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

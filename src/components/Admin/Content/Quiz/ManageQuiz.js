@@ -6,9 +6,10 @@ import { toast } from "react-toastify";
 import TableQuiz from "./TableQuiz";
 import Accordion from "react-bootstrap/Accordion";
 import ModalDeleteQuiz from "./ModalDeleteQuiz.js";
-
+import QuizQA from "./QuizQA.js";
 import { getAllQuizzesForAdmin } from "../../../../services/apiServices.js";
 import ModalUpdateQuiz from "./ModalUpdateQuiz.js";
+import AssignQuiz from "./AssignQuiz.js";
 const options = [
   { value: "EASY", label: "EASY" },
   { value: "MEDIUM", label: "MEDIUM" },
@@ -109,16 +110,29 @@ const ManageQuiz = (props) => {
                 </button>
               </div>
             </div>
+            <div className="list-detail">
+              <TableQuiz
+                handleClickDeleteQuiz={handleClickDeleteQuiz}
+                listQuizzes={listQuizzes}
+                handleClickUpdateQuiz={handleClickUpdateQuiz}
+              />
+            </div>
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header>Update Q/A Quiz</Accordion.Header>
+          <Accordion.Body>
+            <QuizQA />
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>Assign to User</Accordion.Header>
+          <Accordion.Body>
+            <AssignQuiz />
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-      <div className="list-detail">
-        <TableQuiz
-          handleClickDeleteQuiz={handleClickDeleteQuiz}
-          listQuizzes={listQuizzes}
-          handleClickUpdateQuiz={handleClickUpdateQuiz}
-        />
-      </div>
+
       <ModalDeleteQuiz
         show={showModalDeleteQuiz}
         setShow={setShowModalDeleteQuiz}

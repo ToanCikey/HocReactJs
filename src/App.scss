@@ -9,6 +9,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .App-container {
+  .app-content {
+    height: calc(100vh - 90px);
+  }
   .header-container {
     .btn-login {
       border-radius: 5px;

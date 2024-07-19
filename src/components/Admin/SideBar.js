@@ -67,7 +67,10 @@ const SideBar = (props) => {
                 Quản lý bài Quiz
                 <Link to="/admin/manage-quizzes" />
               </MenuItem>
-              <MenuItem> Quản lý câu hỏi</MenuItem>
+              <MenuItem>
+                Quản lý câu hỏi
+                <Link to="/admin/manage-questions" />
+              </MenuItem>
             </SubMenu>
           </Menu>
         </SidebarContent>
