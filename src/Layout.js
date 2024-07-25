@@ -3,7 +3,7 @@ import App from "./App";
 import User from "./components/User/User.js";
 import Admin from "./components/Admin/Admin.js";
 import HomePage from "./components/Home/HomePage.js";
-import Dashboard from "./components/Admin/Content/DashBoar.js";
+import Dashboard from "./components/Admin/Content/DashBoard.js";
 import ManageUser from "./components/Admin/Content/ManageUser.js";
 import Login from "./components/Auth/Login.js";
 import { ToastContainer } from "react-toastify";
@@ -13,6 +13,7 @@ import ListQuiz from "./components/User/ListQuiz.js";
 import DetailQuiz from "./components/User/DetailQuiz.js";
 import ManageQuiz from "./components/Admin/Content/Quiz/ManageQuiz.js";
 import Questions from "./components/Admin/Content/Questions/Questions.js";
+import PrivateRoute from "./routes/PrivateRoute.js";
 const NotFound = () => {
   return (
     <div className="container mt-3 alert alert-danger">
@@ -26,10 +27,24 @@ const LayOut = (props) => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
-          <Route path="user" element={<ListQuiz />} />
+          <Route
+            path="user"
+            element={
+              <PrivateRoute>
+                <ListQuiz />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="/quiz/:id" element={<DetailQuiz />} />
-        <Route path="/admin" element={<Admin />}>
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <Admin />
+            </PrivateRoute>
+          }
+        >
           <Route index element={<Dashboard />} />
           <Route path="manage-user" element={<ManageUser />} />
           <Route path="manage-quizzes" element={<ManageQuiz />} />

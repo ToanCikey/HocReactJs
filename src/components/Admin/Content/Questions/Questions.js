@@ -108,6 +108,7 @@ const Questions = () => {
         question.description,
         question.imageFile
       );
+
       for (const answer of question.answers) {
         await postCreateNewAnswerQuiz(
           answer.description,
